@@ -1,0 +1,43 @@
+import React from 'react';
+import './Order.css';
+import Navbar from '../navbar/Navbar';
+import ProductCheckout from '../ProductCheckout/ProductCheckout';
+import Cart from '../Cart/Cart';
+import { removeFromDb } from '../../utilities/fakedb';
+import { Link } from 'react-router-dom';
+import Footer from '../Footer/Footer';
+import useCart from '../../hooks/useCart';
+import { Outlet } from 'react-router-dom';
+const Order = () => {
+    const [cart, setCart] = useCart();
+    const removeProduct = (productId) =>{
+        const newCart = cart.filter(pd => pd._id !== productId)
+        setCart(newCart)
+        removeFromDb(productId)
+    }
+    return (
+        
+       <div>
+        <Navbar/>
+          <div className="container">
+            <div className="row" style={{marginTop:'30px', marginBottom:'30px'}}>
+            <div className="col-md-8">
+            {
+               cart.map(pd=> <ProductCheckout
+                removeProduct={removeProduct} 
+                product={pd} />)
+            }
+            </div>
+            <div className="col-md-4">
+            <Cart cart={cart}/>
+            <button type="button" style={{marginTop:'15px', backgroundColor:'#71BA58'}} class="btn"><Link to="shipping"><span style={{color:'#FFFFFF',textDecoration:'none'}}>Go to Shipping page</span> </Link></button>       
+            </div>
+            </div>
+          </div>
+        <Footer/>
+        <Outlet/>
+       </div>
+    );
+};
+
+export default Order;

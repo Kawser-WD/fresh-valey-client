@@ -1,0 +1,14 @@
+.login{
+    height: 90vh;
+}
+.login-text{
+    font-weight:bold;
+    color: black;
+}
+
+.login-card{
+    margin-top: 50px;
+    height: 350px;
+    width: 400px;
+    background-color: #DFDFDF;
+}

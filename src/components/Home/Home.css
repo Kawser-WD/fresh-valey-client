@@ -1,0 +1,15 @@
+.home{
+    margin-top: 30px;
+}
+/* .p-card{
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+} */
+.card-text{
+    color: #FF3300;
+}
+.card-title{
+    color: rgb(16, 149, 231);
+}
