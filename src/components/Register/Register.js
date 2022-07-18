@@ -39,31 +39,31 @@ const handleLoginSubmit = e => {
             <div className="card register-card">
                 <div className="card-body">
                 <div className="d-flex justify-content-center">
-                <h5 class="card-title login-text">Register</h5>
+                <h5 className="card-title login-text">Register</h5>
                 </div>
                 <form onSubmit={handleLoginSubmit}>
                 <div class="form-group">
-                    <label class="form-label login-text">Name</label>
-                    <input type="text" class="form-control" onBlur={handleOnBlur}  name="name"  placeholder="Enter Name"/>
+                    <label className="form-label login-text">Name</label>
+                    <input type="text" className="form-control" onBlur={handleOnBlur}  name="name"  placeholder="Enter Name"/>
                 </div>
                 <br/>
-                <div class="form-group">
-                    <label class="form-label login-text">Email</label>
-                    <input type="email" class="form-control" onBlur={handleOnBlur} name="email"  placeholder="Enter email"/>
+                <div className="form-group">
+                    <label className="form-label login-text">Email</label>
+                    <input type="email" className="form-control" onBlur={handleOnBlur} name="email"  placeholder="Enter email"/>
                 </div>
                 <br />
                 <div class="form-group">
-                    <label class="form-label login-text">Password</label>
-                    <input type="password" class="form-control"  onBlur={handleOnBlur}  name="password" placeholder="Password"/>
+                    <label className="form-label login-text">Password</label>
+                    <input type="password" className="form-control"  onBlur={handleOnBlur}  name="password" placeholder="Password"/>
                 </div>
                 <br />
-                <div class="form-group">
-                    <label class="form-label login-text">Confirm Password</label>
-                    <input type="password" class="form-control"  onBlur={handleOnBlur}  name="password2" placeholder="Re Type Your Password"/>
+                <div className="form-group">
+                    <label className="form-label login-text">Confirm Password</label>
+                    <input type="password" className="form-control"  onBlur={handleOnBlur}  name="password2" placeholder="Re Type Your Password"/>
                 </div>
                 <br />
                 <div className="d-grid">
-                <button type="submit"  class="btn" style={{backgroundColor:'#30336b', color:'#ffffff'}}>Register</button>
+                <button type="submit"  className="btn" style={{backgroundColor:'#30336b', color:'#ffffff'}}>Register</button>
                 </div>
              </form>
           </div>

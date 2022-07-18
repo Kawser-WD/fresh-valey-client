@@ -25,7 +25,7 @@ const AddProduct = () => {
         formData.append('price', food.price)
         formData.append('file', file)
 
-        fetch('http://localhost:4000/addFood', {
+        fetch('https://young-ridge-26718.herokuapp.com/addFood', {
             method: 'POST',
             body: formData
         })

@@ -4,35 +4,6 @@ import { useForm } from 'react-hook-form';
 
 const EditProduct = (props) => {
     const {name, weight, price, _id} = props.pd
-    // const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    // const onSubmit = (id) => {
-
-    //     fetch(`http://localhost:4000/allProduct/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(props.pd)
-    //    })
-    //    .then(res => res.json())
-    //    .then(data => {
-    //        console.log('product updated')
-           
-    //    })
-
-
-
-
-
-    // }
-     // const [updatepd, setUpdatePd] = useState([])
-    // const loadProduct = (id)=>{
-    //     fetch(`http://localhost:4000/allProduct/${id}`)
-    //     .then(res=> res.json())
-    //     .then(data=>{
-    //         console.log(data)
-    //     })
-    // }
    const [updatepd,setUpdatePd] = useState({});
     const handleBlur = e => {
         const newPd = { ...updatepd}
@@ -45,7 +16,7 @@ const EditProduct = (props) => {
          const weight = document.getElementById('weight').value
          const price = document.getElementById('price').value
          const product = {name, weight, price}
-        fetch(`http://localhost:4000/allProduct/${id}`, {
+        fetch(`https://young-ridge-26718.herokuapp.com/allProduct/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

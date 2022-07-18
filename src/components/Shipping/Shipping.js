@@ -19,7 +19,7 @@ const Shipping = () => {
         const savedCart = getStoredCart();
         const price = cart.map(pd=> pd.price)
         const orderDetail = { user:user.email, product:savedCart, price:price, shipment:data, ordertime: new Date()   }
-        fetch("http://localhost:4000/order", {
+        fetch("https://young-ridge-26718.herokuapp.com/order", {
             method: "POST",
             headers: { "content-type": "application/json" },
             body: JSON.stringify(orderDetail)
