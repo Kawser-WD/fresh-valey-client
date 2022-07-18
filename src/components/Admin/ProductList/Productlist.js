@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon, } from '@fortawesome/react-fontawesome'
 import { faTrashAlt,faPencilAlt } from '@fortawesome/free-solid-svg-icons'
 import AdminDrawer from '../Drawer/AdminDrawer';
+import { dynamicTitle } from '../../DynamicTitle/DynamicTitle';
 const Productlist = () => {
+    dynamicTitle("ProductList")
     const [products, setProducts] = useState([]);
         useEffect(()=>{
         fetch('http://localhost:4000/allProduct')

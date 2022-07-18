@@ -5,7 +5,9 @@ import empty from '../../Loading/empty.gif'
 import Footer from '../Footer/Footer';
 import useAuth from '../../hooks/useAuth';
 import { Link, Outlet } from 'react-router-dom';
+import { dynamicTitle } from '../DynamicTitle/DynamicTitle';
 const MyOrder = () => {
+    dynamicTitle("MyOrder");
     const [orders, setOrders] = useState([])
     const { user } = useAuth();
     const email = user?.email;
@@ -37,7 +39,7 @@ const MyOrder = () => {
              }
 
           <div className='d-flex justify-content-center'>
-          <table class="table table-borderless table-hover" style={{width:'500px', marginTop:'60px', marginBottom:'20px'}}>
+          <table class="table table-borderless table-hover" style={{width:'500px', marginTop:'150px', marginBottom:'20px'}}>
             <thead>
                 <tr>
                 <th scope="col">Order ID</th>
@@ -67,8 +69,10 @@ const MyOrder = () => {
             </table>
           </div>
              
+            <div style={{marginTop:'50px'}}>
             <Footer/>
             <Outlet/>
+            </div>
         </div>
     );
 };

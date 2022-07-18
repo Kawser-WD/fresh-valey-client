@@ -9,7 +9,6 @@ import useCart from '../../hooks/useCart'
 import useAuth from '../../hooks/useAuth.js';
 const Navbar = () => {
   const { user, logout, admin } = useAuth();
-  const [cart]= useCart(); 
     return (
       <nav class="navbar navbar-expand-lg navbar-expand-sm fixed-top shadow " style={{backgroundColor:'#FFFFFF', height:'100px'}}>
       <div class="container-fluid">
@@ -46,10 +45,6 @@ const Navbar = () => {
                    <Link  class="nav-link" style={{textDecoration:'none'}} to="/login">Login</Link>
                    </li>
                }
-                
-                <li class="nav-item">
-                <Link class="nav-link" style={{textDecoration:'none'}} to="/order"><FontAwesomeIcon style={{color:'#EF761A', height:'20px', width:'20px'}}  icon={faCartPlus} />{cart.length}</Link>
-                </li>
                 
       </ul>
       </div>

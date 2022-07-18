@@ -8,7 +8,9 @@ import { Link } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import useCart from '../../hooks/useCart';
 import { Outlet } from 'react-router-dom';
+import { dynamicTitle } from '../DynamicTitle/DynamicTitle';
 const Order = () => {
+  dynamicTitle("Order")
     const [cart, setCart] = useCart();
     const removeProduct = (productId) =>{
         const newCart = cart.filter(pd => pd._id !== productId)

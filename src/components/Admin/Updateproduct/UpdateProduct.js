@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from 'react-router-dom';
+import { dynamicTitle } from '../../DynamicTitle/DynamicTitle';
 import EditProduct from '../EditProduct/EditProduct';
 import Sidebar from '../Sidebar/Sidebar';
 
 const UpdateProduct = (props) => {
-    // const {name, weight, price} = props.updtPd
-    // console.log(name, weight, price)
+    dynamicTitle("UpdateProduct")
     const {id} = useParams();
     const [product, setProduct] = useState([])
     useEffect(()=>{
@@ -17,22 +17,6 @@ const UpdateProduct = (props) => {
     },[])
     // console.log(product)
     const result = product.filter(pd => pd._id === id)
-
-
-    //  const updateProduct = (id)=>{
-    //     fetch(`http://localhost:4000/allProduct/${id}`, {
-    //         method: 'PATCH',
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         },
-    //         body: JSON.stringify(props.product)
-    //    })
-    //    .then(res => res.json())
-    //    .then(data => {
-    //        console.log('product updated')
-           
-    //    })
-    // }
     return (
         <div className="container-fluid row">
         <Sidebar/>

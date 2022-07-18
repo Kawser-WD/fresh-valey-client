@@ -9,7 +9,9 @@ import Footer from '../Footer/Footer';
 import useCart from '../../hooks/useCart';
 import useAuth from '../../hooks/useAuth';
 import toast from 'react-hot-toast';
+import { dynamicTitle } from '../DynamicTitle/DynamicTitle';
 const Shipping = () => {
+    dynamicTitle("Shipping")
     const [cart] = useCart();
     const { user } = useAuth();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
@@ -70,7 +72,7 @@ const Shipping = () => {
                             <textarea type="text"  class="form-control" {...register("address", {required: true})} />
                             </div>
                             <br />
-                            <button type="submit" className="btn btn-primary">Submit</button>
+                            <button type="submit" className="btn" style={{backgroundColor:'#130f40', color:'#fff'}}>Submit</button>
                        </form>
                   </div>
                   <div className="col-md-4">

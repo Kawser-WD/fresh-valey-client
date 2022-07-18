@@ -3,9 +3,10 @@ import React, { useState } from 'react';
 import AdminDrawer from '../Drawer/AdminDrawer';
 import {toast, Toaster} from 'react-hot-toast';
 import useAuth from '../../../hooks/useAuth';
+import { dynamicTitle } from '../../DynamicTitle/DynamicTitle';
 
 const MakeAdmin = () => {
-
+dynamicTitle("Make Admin")
     const [email, setEmail] = useState('');
     const [success, setSuccess] = useState(false);
     const { token } = useAuth();

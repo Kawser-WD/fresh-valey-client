@@ -1,16 +1,16 @@
-import React, { useState, useRef} from 'react';
+import React, { useState} from 'react';
 import './Register.css';
 import { Outlet, useNavigate } from 'react-router-dom';
-import { useUserContext } from '../context/UserContext';
 import Navbar from '../navbar/Navbar';
 import Footer from '../Footer/Footer';
 import useAuth from '../../hooks/useAuth';
-import toast, { Toaster } from 'react-hot-toast';
+import { dynamicTitle } from '../DynamicTitle/DynamicTitle';
 
 
 
 
 const Register = () => {
+    dynamicTitle("Register")
   const [loginData, setLoginData] = useState({});
   const navigate = useNavigate();
   const { user, registerUser, isLoading, authError } = useAuth();
@@ -31,13 +31,11 @@ const handleLoginSubmit = e => {
     e.preventDefault();
 }
 
-
-const notify = () => toast.success('SingUp Successful!!!',{duration: 4000,});
     
     return (
         <div>
              <Navbar/>
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center" style={{marginTop:'150px'}}>
             <div className="card register-card">
                 <div className="card-body">
                 <div className="d-flex justify-content-center">
@@ -65,13 +63,9 @@ const notify = () => toast.success('SingUp Successful!!!',{duration: 4000,});
                 </div>
                 <br />
                 <div className="d-grid">
-                <button type="submit" onClick={notify} class="btn" style={{backgroundColor:'#71BA58', color:'#ffffff'}}>Register</button>
+                <button type="submit"  class="btn" style={{backgroundColor:'#30336b', color:'#ffffff'}}>Register</button>
                 </div>
              </form>
-             <Toaster
-            position="top-center"
-            reverseOrder={false}
-            />
           </div>
         </div>
         </div>

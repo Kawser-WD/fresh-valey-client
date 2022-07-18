@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
+import { dynamicTitle } from '../../DynamicTitle/DynamicTitle';
 import AdminDrawer from '../Drawer/AdminDrawer';
 import Sidebar from '../Sidebar/Sidebar';
 
 const AddProduct = () => {
-
+    dynamicTitle("AddProduct")
     const [food, setFood] = useState({});
     const [file, setFile] = useState(null)
 

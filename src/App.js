@@ -30,6 +30,8 @@ function App() {
      <AuthProvider>
         <BrowserRouter>
         <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/:productId" element={<PrivateRoute><ProductDetails/></PrivateRoute>}/>
         <Route path="myorder" element={<PrivateRoute><MyOrder/></PrivateRoute>}/>
         <Route path="order" element={<PrivateRoute><Order/></PrivateRoute>}/>
@@ -40,10 +42,8 @@ function App() {
         <Route path="updateproduct/:id" element={<AdminRoute><UpdateProduct/></AdminRoute>}/>
         <Route path="add-product" element={<AdminRoute><AddProduct/></AdminRoute>}/>
         <Route path="make-admin" element={<AdminRoute><MakeAdmin/></AdminRoute>}/>
-        <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/> }/>
         <Route path="/register" element={<Register/>}/>
-        <Route exact path="/" element={<Home/>}/>
         </Routes>
         </BrowserRouter>
      </AuthProvider>
