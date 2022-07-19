@@ -25,7 +25,7 @@ const Order = () => {
        <div>
         <Navbar/>
           <div className="container">
-            <div className="row" style={{marginTop:'80px', marginBottom:'30px'}}>
+            <div className="row" style={{marginTop:'110px', marginBottom:'30px'}}>
             <div className="col-md-8">
             {
                cart.map(pd=> <ProductCheckout
