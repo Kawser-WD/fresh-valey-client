@@ -33,8 +33,8 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/:productId" element={<PrivateRoute><ProductDetails/></PrivateRoute>}/>
-        <Route path="myorder" element={<PrivateRoute><MyOrder/></PrivateRoute>}/>
-        <Route path="order" element={<PrivateRoute><Order/></PrivateRoute>}/>
+        <Route path="/myorder" element={<PrivateRoute><MyOrder/></PrivateRoute>}/>
+        <Route path="/order" element={<PrivateRoute><Order/></PrivateRoute>}/>
         <Route path="order/shipping" element={<PrivateRoute><Shipping/></PrivateRoute>}/>
         <Route path={`payment/:orderId`} element={<PrivateRoute><PaymentProcess/></PrivateRoute>}/>
         <Route path="/admin" element={<PrivateRoute><Admin/></PrivateRoute>}/>

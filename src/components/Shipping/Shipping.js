@@ -10,10 +10,12 @@ import useCart from '../../hooks/useCart';
 import useAuth from '../../hooks/useAuth';
 import toast from 'react-hot-toast';
 import { dynamicTitle } from '../DynamicTitle/DynamicTitle';
+import {  useNavigate } from 'react-router-dom';
 const Shipping = () => {
     dynamicTitle("Shipping")
     const [cart] = useCart();
     const { user } = useAuth();
+    const navigate = useNavigate();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
         const savedCart = getStoredCart();
@@ -27,9 +29,10 @@ const Shipping = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                   toast.success('order placed successfully!!!')
+                   clearTheCart();
                     reset();
-                    clearTheCart();
+                    navigate('/myorder')
+                   
                 }
             })
     }

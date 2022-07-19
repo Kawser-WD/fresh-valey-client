@@ -35,7 +35,7 @@ const Order = () => {
             </div>
             <div className="col-md-4">
             <Cart cart={cart}/>
-            <button type="button" style={{marginTop:'15px', backgroundColor:'#71BA58'}} class="btn"><Link to="shipping"><span style={{color:'#FFFFFF',textDecoration:'none'}}>Go to Shipping page</span> </Link></button>       
+            <button type="button" style={{marginTop:'15px', backgroundColor:'#30336b'}} class="btn"><Link to="shipping" style={{textDecoration:'none'}}><span style={{color:'#FFFFFF'}}>Go to Shipping page</span> </Link></button>       
             </div>
             </div>
           </div>
