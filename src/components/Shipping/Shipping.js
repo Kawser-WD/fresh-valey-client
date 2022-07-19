@@ -30,6 +30,8 @@ const Shipping = () => {
             .then(result => {
                 if (result) {
                     reset();
+                    clearTheCart();
+                    navigate('/')
                    
                 }
             })
