@@ -29,7 +29,6 @@ const Shipping = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                   clearTheCart();
                     reset();
                    
                 }
