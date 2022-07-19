@@ -12,12 +12,10 @@ import { dynamicTitle } from '../DynamicTitle/DynamicTitle';
 const Order = () => {
   dynamicTitle("Order")
     const [cart, setCart] = useCart();
-    const navigate = useNavigate();
     const removeProduct = (productId) =>{
         const newCart = cart.filter(pd => pd._id !== productId)
         setCart(newCart)
         removeFromDb(productId)
-        navigate('/')
 
     }
     return (
