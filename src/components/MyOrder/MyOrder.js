@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import MypdOrder from '../MypdOrder/MypdOrder';
 import Navbar from '../navbar/Navbar';
 import empty from '../../Loading/empty.gif'
 import Footer from '../Footer/Footer';

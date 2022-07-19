@@ -31,7 +31,6 @@ const Shipping = () => {
                 if (result) {
                    clearTheCart();
                     reset();
-                    navigate('/myorder')
                    
                 }
             })
