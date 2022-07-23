@@ -15,7 +15,7 @@ const PaymentCardForm = ({ order }) => {
     const [clientSecret, setClientSecret] = useState('');
 
     useEffect(() => {
-        fetch('http://localhost:4000/create-payment-intent', {
+        fetch('https://young-ridge-26718.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -80,7 +80,7 @@ const PaymentCardForm = ({ order }) => {
                 last4: paymentMethod.card.last4,
                 transaction: paymentIntent.client_secret.slice('_secret')[0]
             }
-            const url = `http://localhost:4000/myOrder/${_id}`;
+            const url = `https://young-ridge-26718.herokuapp.com/myOrder/${_id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

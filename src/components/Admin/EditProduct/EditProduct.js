@@ -16,7 +16,7 @@ const EditProduct = (props) => {
          const weight = document.getElementById('weight').value
          const price = document.getElementById('price').value
          const product = {name, weight, price}
-        fetch(`http://localhost:4000/allProduct/${id}`, {
+        fetch(`https://young-ridge-26718.herokuapp.com/allProduct/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

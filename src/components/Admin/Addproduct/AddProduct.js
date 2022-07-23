@@ -18,7 +18,7 @@ const AddProduct = () => {
             price: data.price,
             imageURL: imageURL
         };
-        const url =`http://localhost:4000/allProduct`;
+        const url =`https://young-ridge-26718.herokuapp.com/allProduct`;
         fetch(url,{
             method: 'POST',
             headers:{

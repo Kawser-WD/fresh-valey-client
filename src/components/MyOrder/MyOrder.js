@@ -13,7 +13,7 @@ const MyOrder = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:4000/myOrder?email=${email}`
+        fetch(`https://young-ridge-26718.herokuapp.com/myOrder?email=${email}`
         ,
          {
             headers: {
