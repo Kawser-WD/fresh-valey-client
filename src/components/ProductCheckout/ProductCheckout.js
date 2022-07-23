@@ -4,12 +4,12 @@ import { FontAwesomeIcon, } from '@fortawesome/react-fontawesome';
 import { faPlus,faMinus, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 const ProductCheckout = (props) => {
-    const {name, image, price, quantity, _id} = props.product;
+    const {name, imageURL, price, quantity, _id} = props.product;
     return (
         <div>
             <div class="row g-0">
                 <div class="col-md-6">
-                <img src={`data:image/png;base64,${image.img}`} class="img-fluid rounded-start" alt="..."/>
+                <img src={imageURL} class="img-fluid rounded-start" alt="..."/>
                 </div>
                 <div class="col-md-6" style={{marginTop:'50px', paddingLeft:'20px'}}>
                 <h5>{name}</h5>

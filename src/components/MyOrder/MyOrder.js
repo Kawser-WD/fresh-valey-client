@@ -3,31 +3,37 @@ import Navbar from '../navbar/Navbar';
 import empty from '../../Loading/empty.gif'
 import Footer from '../Footer/Footer';
 import useAuth from '../../hooks/useAuth';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { dynamicTitle } from '../DynamicTitle/DynamicTitle';
 const MyOrder = () => {
     dynamicTitle("MyOrder");
     const [orders, setOrders] = useState([])
     const { user } = useAuth();
     const email = user?.email;
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`https://young-ridge-26718.herokuapp.com/myOrder?email=${email}`, {
+        fetch(`http://localhost:4000/myOrder?email=${email}`
+        ,
+         {
             headers: {
                 "authorization": `Bearer ${localStorage.getItem('idToken')}`
             }
         })
-            .then(res => res.json())
-            // {
-            //     if (res.status === 200) {
-            //         return res.json()
-            //     }
-            //     else if (res.status === 401) {
-            //         history.push('/login')
-            //     }
+     
+        .then(res => 
+            // if (res.status === 200) {
+            //     return res.json();
             // }
+            // else if (res.status === 401) {
+            //     navigate('/login');
+            // }
+            res.json()
 
-            .then(data => setOrders(data))
+        )
+        .then(data => setOrders(data));
+
+           
     }, [email])
 
     return (

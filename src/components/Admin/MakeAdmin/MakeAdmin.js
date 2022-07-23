@@ -16,7 +16,7 @@ dynamicTitle("Make Admin")
     }
     const handleAdminSubmit = e => {
         const user = { email };
-        fetch('https://young-ridge-26718.herokuapp.com/users/admin', {
+        fetch('http://localhost:4000/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

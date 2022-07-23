@@ -14,7 +14,7 @@ const PaymentProcess = () => {
     const { orderId } = useParams();
     const [order, setOrder] = useState({});
     useEffect(() => {
-        fetch(`https://young-ridge-26718.herokuapp.com/myOrder/${orderId}`)
+        fetch(`http://localhost:4000/myOrder/${orderId}`)
             .then(res => res.json())
             .then(data => setOrder(data));
     }, [orderId]);

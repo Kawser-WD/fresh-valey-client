@@ -33,14 +33,14 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route path="/" element={<Home/>}/>
         <Route path="/:productId" element={<PrivateRoute><ProductDetails/></PrivateRoute>}/>
-        <Route path="/myorder" element={<PrivateRoute><MyOrder/></PrivateRoute>}/>
-        <Route path="/order" element={<PrivateRoute><Order/></PrivateRoute>}/>
+        <Route path="myorder" element={<PrivateRoute><MyOrder/></PrivateRoute>}/>
+        <Route path="order" element={<PrivateRoute><Order/></PrivateRoute>}/>
         <Route path="order/shipping" element={<PrivateRoute><Shipping/></PrivateRoute>}/>
         <Route path={`payment/:orderId`} element={<PrivateRoute><PaymentProcess/></PrivateRoute>}/>
         <Route path="/admin" element={<PrivateRoute><Admin/></PrivateRoute>}/>
         <Route path="product-list/*" element={<AdminRoute><Productlist/></AdminRoute>}/>
         <Route path="updateproduct/:id" element={<AdminRoute><UpdateProduct/></AdminRoute>}/>
-        <Route path="add-product" element={<AdminRoute><AddProduct/></AdminRoute>}/>
+        <Route path="add-product" element={<AddProduct/>}/>
         <Route path="make-admin" element={<AdminRoute><MakeAdmin/></AdminRoute>}/>
         <Route path="/login" element={<Login/> }/>
         <Route path="/register" element={<Register/>}/>

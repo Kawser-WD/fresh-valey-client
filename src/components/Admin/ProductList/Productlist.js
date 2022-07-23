@@ -8,21 +8,25 @@ const Productlist = () => {
     dynamicTitle("ProductList")
     const [products, setProducts] = useState([]);
         useEffect(()=>{
-        fetch('https://young-ridge-26718.herokuapp.com/allProduct')
+        fetch('http://localhost:4000/allProduct')
         .then(res => res.json())
         .then(data => setProducts(data))
     },[]);
 
     const deleteProduct = (id)=>{
-        fetch(`https://young-ridge-26718.herokuapp.com/allProduct/${id}`, {
+        fetch(`http://localhost:4000/allProduct/${id}`, {
              method: 'DELETE'
         })
         .then(res => res.json())
-        .then(res => {
-            console.log('product deleted')
-            // if(res){
-                
-            // }
+        .then(data=>{
+            {
+                if(data.deletedCount > 0) {
+                    alert('Deleted successfully');
+                    const remainingService = products.filter(product => product._id !== id)
+                    setProducts(remainingService)
+                }
+               
+            }
         })
     }
     return (

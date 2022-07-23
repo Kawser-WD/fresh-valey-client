@@ -18,7 +18,7 @@ const Products = () => {
     const [displayProducts, setDisplayProducts] = useState([]);
     const [loading, setLoading] = useState(true)
     useEffect(()=>{
-        fetch('https://young-ridge-26718.herokuapp.com/allProduct')
+        fetch('http://localhost:4000/allProduct')
         .then(res => res.json())
         .then(data =>{ 
             setProducts(data)
