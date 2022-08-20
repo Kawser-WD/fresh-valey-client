@@ -17,10 +17,27 @@ const Shipping = () => {
     const { user } = useAuth();
     const navigate = useNavigate();
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+
+    const total = cart.reduce((total ,pd)=> total + parseInt(pd.price * pd.quantity) ,0)
+    let Shipping = 0;
+    if(total > 300){
+        Shipping = 0;
+    }
+    else if(total > 200){
+        Shipping = 4;
+    }
+    else if(total > 0){
+        Shipping = 12;
+    }
+    
+    const tax = (total / 10).toFixed(2);
+    const payableTotal = (total + Shipping + parseInt(tax))
+
+
     const onSubmit = data => {
         const savedCart = getStoredCart();
-        const price = cart.map(pd=> pd.price)
-        const orderDetail = { user:user.email, product:savedCart, price:price, shipment:data, ordertime: new Date()   }
+        const price = cart.map(pd=> pd.payableTotal)
+        const orderDetail = { user:user.email, product:savedCart, price:payableTotal, shipment:data, ordertime: new Date()   }
         fetch("https://young-ridge-26718.herokuapp.com/order", {
             method: "POST",
             headers: { "content-type": "application/json" },
@@ -29,9 +46,10 @@ const Shipping = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
+                    toast.success('Order placed successfully')
                     reset();
                     clearTheCart();
-                   
+                    navigate('/myorder')
                 }
             })
     }

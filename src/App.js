@@ -21,6 +21,7 @@ import MakeAdmin from './components/Admin/MakeAdmin/MakeAdmin';
 import AdminRoute from './components/Login/AdminRoute/AdminRoute';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import PaymentProcess from './components/Home/PaymentProcess/PaymentProcess';
+import { Toaster } from 'react-hot-toast';
 
 
 function App() {
@@ -29,6 +30,11 @@ function App() {
   
      <AuthProvider>
         <BrowserRouter>
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          duration="2000"
+        />
         <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route path="/" element={<Home/>}/>
